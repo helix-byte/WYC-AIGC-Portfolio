@@ -4,7 +4,7 @@
 
 ## 🌐 线上地址
 
-**https://helix-byte.github.io/WYC-AIGC-Portfolio/**
+**https://helix.ln.cn/**
 
 （任何人打开这个链接即可查看；更新内容后 push 到 main 分支，网站会自动更新）
 
@@ -72,12 +72,13 @@ git push
 
 访问地址规则：
 - 仓库名**恰为** `helix-byte.github.io` → 用户站点，地址为 `https://helix-byte.github.io/`（根路径）；
-- 仓库名为其他（如当前的 `WYC-AIGC-Portfolio`）→ 项目站点，地址为 `https://helix-byte.github.io/WYC-AIGC-Portfolio/`（带仓库名子路径）。
+- 仓库名为其他（如当前的 `WYC-AIGC-Portfolio`）→ 项目站点，地址为 `https://helix-byte.github.io/<仓库名>/`（带仓库名子路径）。
+- 当前已绑定自定义根域名，实际访问地址为 `https://helix.ln.cn/`（根路径）；项目仍可通过上面的 github.io 地址访问（会自动跳转到自定义域名）。
 
 若日后改仓库名或改用用户站点，需同步修改 `index.html` 中的 `canonical` / `og:url` / `og:image`。
 
 ### 第三步：分享
-网址：`https://helix-byte.github.io/WYC-AIGC-Portfolio/`
+网址：`https://helix.ln.cn/`
 
 ## 部署到腾讯云 COS / 阿里云 OSS（国内访问更快，可选）
 

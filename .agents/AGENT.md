@@ -126,4 +126,4 @@ git checkout -b fix/contact-info
 
 ### 7.4 上线校验
 
-线上核对：首页 200、`assets/og-cover.png` 可访问、视频与 PDF 能加载、`canonical` / `og:url` 指向 https://helix-byte.github.io/WYC-AIGC-Portfolio/ 。
+线上核对：首页 200、`assets/og-cover.png` 可访问、视频与 PDF 能加载、`canonical` / `og:url` 指向 https://helix.ln.cn/ 。
