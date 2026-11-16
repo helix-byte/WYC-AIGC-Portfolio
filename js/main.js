@@ -12,42 +12,42 @@
   var WORKS = [
     /* ---- AI 视频 ---- */
     {id:"v1", type:"video", cat:"video", code:"REEL 01", title:"空白应答", tag:"定格动画情绪短片",
-     file:"assets/videos/1.定格动画情绪短片《空白应答》.mp4", poster:"assets/posters/1.定格动画情绪短片《空白应答》.webp",
-     meta:"720P · 约31MB · 01:50",
+     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=63688c8b6938c32f&userId=16366&flsign=aec65aa2bb2539755be653ca9101c9bb&ext=.m3u8", poster:"assets/posters/1.定格动画情绪短片《空白应答》.webp",
+     meta:"720P · 01:50",
      desc:"一个房间花了四十年把自己变成了人的身体。人离开后，它仍然在等。—— 定格动画质感的 AI 情绪短片，约 135 秒，即梦 AI 图生视频。"},
     {id:"v11", type:"video", cat:"video", code:"REEL 02", title:"文艺复兴《暴风雨》", tag:"文艺复兴 · 无台词短片",
-     file:"assets/videos/文艺复兴《暴风雨》.mp4", poster:"assets/posters/文艺复兴《暴风雨》.webp",
-     meta:"720P · 约33MB · 01:58",
+     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=657cb7af522bc114&userId=16366&flsign=b0ea21f2c6c6f495a6fcd5d5fc86073f&ext=.m3u8", poster:"assets/posters/文艺复兴《暴风雨》.webp",
+     meta:"720P · 01:58",
      desc:"文艺复兴油画美学 × 无台词叙事：110 秒、10 个镜头、40 个生成单元。从金笼里的婚约，到暴雨中的奔跑——结尾不是殉情，而是两个人共同选择未来。"},
     {id:"v2", type:"video", cat:"video", code:"REEL 03", title:"惊悚风格练习", tag:"风格练习",
-     file:"assets/videos/2.惊悚风格练习.mp4", poster:"assets/posters/2.惊悚风格练习.webp",
-     meta:"720P · 约12MB · 00:44",
+     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=32c7db0061860ca1&userId=16366&flsign=92f1811837827c967eb009e98205f27c&ext=.m3u8", poster:"assets/posters/2.惊悚风格练习.webp",
+     meta:"720P · 00:44",
      desc:"惊悚氛围的 AI 视频风格练习片段。"},
     {id:"v3", type:"video", cat:"video", code:"REEL 04", title:"黑神话风格练习", tag:"风格练习",
-     file:"assets/videos/3.黑神话风格练习.mp4", poster:"assets/posters/3.黑神话风格练习.webp",
-     meta:"720P · 约4MB · 00:15",
+     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=69dd4e3d32900c50&userId=16366&flsign=63958203a44a596e3065dcd8d042f14d&ext=.m3u8", poster:"assets/posters/3.黑神话风格练习.webp",
+     meta:"720P · 00:15",
      desc:"黑神话风格东方女祭司的风格练习片段。"},
     {id:"v4", type:"video", cat:"video", code:"REEL 05", title:"巨兽风格练习", tag:"风格练习",
-     file:"assets/videos/4.巨兽风格练习.mp4", poster:"assets/posters/4.巨兽风格练习.webp",
-     meta:"720P · 约2MB · 00:09", desc:"巨兽题材的 AI 视频风格练习片段。"},
+     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=983aba9b6cdc7a5e&userId=16366&flsign=e80867676fcfb3d210505335aa39460c&ext=.m3u8", poster:"assets/posters/4.巨兽风格练习.webp",
+     meta:"720P · 00:09", desc:"巨兽题材的 AI 视频风格练习片段。"},
     {id:"v5", type:"video", cat:"video", code:"REEL 06", title:"人物微表情练习 1", tag:"风格练习",
-     file:"assets/videos/5.人物微表情练习1.mp4", poster:"assets/posters/5.人物微表情练习1.webp",
-     meta:"720P · 约3MB · 00:10", desc:"人物微表情与表演细节的 AI 视频练习片段。"},
+     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=71c9a7400c145234&userId=16366&flsign=8294d785562fc1a98ff7f8d77e1aea90&ext=.m3u8", poster:"assets/posters/5.人物微表情练习1.webp",
+     meta:"720P · 00:10", desc:"人物微表情与表演细节的 AI 视频练习片段。"},
     {id:"v6", type:"video", cat:"video", code:"REEL 07", title:"人物微表情练习 2", tag:"风格练习",
-     file:"assets/videos/6.人物微表情练习2.mp4", poster:"assets/posters/6.人物微表情练习2.webp",
-     meta:"720P · 约3MB · 00:10", desc:"人物微表情与表演细节的 AI 视频练习片段。"},
+     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=c9717fd9270a928e&userId=16366&flsign=a097ababead05bb3600db7ffc4ede241&ext=.m3u8", poster:"assets/posters/6.人物微表情练习2.webp",
+     meta:"720P · 00:10", desc:"人物微表情与表演细节的 AI 视频练习片段。"},
     {id:"v7", type:"video", cat:"video", code:"REEL 08", title:"真人短片片段", tag:"真人质感",
-     file:"assets/videos/7.真人短片片段.mp4", poster:"assets/posters/7.真人短片片段.webp",
-     meta:"720P · 约24MB · 01:21", desc:"接近真人实拍质感的 AI 视频片段练习。"},
+     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=075ab6dcf3a570fe&userId=16366&flsign=dc997c14c462a149f5a3be02f8c325ac&ext=.m3u8", poster:"assets/posters/7.真人短片片段.webp",
+     meta:"720P · 01:21", desc:"接近真人实拍质感的 AI 视频片段练习。"},
     {id:"v8", type:"video", cat:"video", code:"REEL 09", title:"巨兽风格练习 2", tag:"风格练习",
-     file:"assets/videos/巨兽风格练习2.mp4", poster:"assets/posters/巨兽风格练习2.webp",
-     meta:"720P · 约2MB · 00:07", desc:"巨兽题材 AI 视频的续作练习片段。"},
+     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=91eab18bd14d7935&userId=16366&flsign=ba4a1c9ff01edf8338a0b682ad993054&ext=.m3u8", poster:"assets/posters/巨兽风格练习2.webp",
+     meta:"720P · 00:07", desc:"巨兽题材 AI 视频的续作练习片段。"},
     {id:"v9", type:"video", cat:"video", code:"REEL 10", title:"海外短剧片段 1", tag:"海外短剧",
-     file:"assets/videos/海外短剧片段1.mp4", poster:"assets/posters/海外短剧片段1.webp",
-     meta:"720P · 约14MB · 01:12", desc:"海外短剧片段 —— 竖屏叙事的节奏与表演调度练习。"},
+     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=590f58ca74db4987&userId=16366&flsign=75f660e07ad4be6d2b4e5e40d18606ad&ext=.m3u8", poster:"assets/posters/海外短剧片段1.webp",
+     meta:"720P · 01:12", desc:"海外短剧片段 —— 竖屏叙事的节奏与表演调度练习。"},
     {id:"v10", type:"video", cat:"video", code:"REEL 11", title:"海外短剧片段 2", tag:"海外短剧",
-     file:"assets/videos/海外短剧片段2.mp4", poster:"assets/posters/海外短剧片段2.webp",
-     meta:"720P · 约18MB · 01:30", desc:"海外短剧片段 —— 竖屏构图的叙事节奏练习。"},
+     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=8d2f2ad9c345c8cd&userId=16366&flsign=b63e6341406c48963c02357785cdcd65&ext=.m3u8", poster:"assets/posters/海外短剧片段2.webp",
+     meta:"720P · 01:30", desc:"海外短剧片段 —— 竖屏构图的叙事节奏练习。"},
 
     /* ---- 剧本创作 ---- */
     {id:"s1", type:"script", cat:"script", code:"SCRIPT 01", title:"《人面巨树》分镜剧本", tag:"暗黑奇幻 · 约70秒成片",
@@ -118,6 +118,7 @@
 
   var currentFilter = "all";
   var lbIndex = -1;
+  var hlsInstance = null;   // 当前 HLS.js 实例（若正在播放 M3U8 流）
 
   function esc(s){
     return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
@@ -128,7 +129,7 @@
     return '<button class="reel-frame" data-reel="'+w.id+'" aria-label="播放 '+esc(w.title)+'">'+
       '<img src="'+w.poster+'" alt="" loading="eager">'+
       '<span class="reel-cap"><span class="reel-name">'+esc(w.title)+'</span>'+
-      '<span class="reel-code">'+w.code+' · '+w.meta.split(" · ")[2]+'</span></span>'+
+      '<span class="reel-code">'+w.code+' · '+w.meta.split(" · ")[1]+'</span></span>'+
     '</button>';
   }
   function buildReel(){
@@ -205,24 +206,86 @@
   }
 
   /* ---------- 视频弹窗 ---------- */
+  function tryPlay(){
+    var p = vmVideo.play();
+    if (p && p.catch) p.catch(function(){});
+  }
+
+  function destroyHls(){
+    if (hlsInstance){
+      try { hlsInstance.destroy(); } catch (e){}
+      hlsInstance = null;
+    }
+  }
+
+  // 停止并清空当前视频（含 HLS 实例），供切片与关闭弹窗复用
+  function resetVideo(){
+    destroyHls();
+    try { vmVideo.pause(); } catch (e){}
+    vmVideo.removeAttribute("src");
+    try { vmVideo.load(); } catch (e){}
+  }
+
   function openVideo(w){
     vmTitle.textContent = w.title;
     vmTag.textContent = w.tag;
     if (vmMeta) vmMeta.textContent = w.code + " · " + w.meta;
     vmDesc.textContent = w.desc;
-    vmVideo.src = w.file;
     vm.classList.add("open");
     vm.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-    var p = vmVideo.play();
-    if (p && p.catch) p.catch(function(){});
+
+    // 先释放上一支视频的资源（若有 HLS 实例则销毁）
+    resetVideo();
+
+    var isHls = /\.m3u8(\?|#|$)/i.test(w.file);
+
+    if (isHls && window.Hls && window.Hls.isSupported()){
+      var retries = 0;
+      var inst = new window.Hls({
+        enableWorker: true,
+        lowLatencyMode: false,
+        maxBufferLength: 30
+      });
+      hlsInstance = inst;
+      inst.loadSource(w.file);
+      inst.attachMedia(vmVideo);
+      inst.on(window.Hls.Events.MANIFEST_PARSED, function(){
+        if (inst !== hlsInstance) return;   // 已切到别的视频，忽略旧实例回调
+        tryPlay();
+      });
+      inst.on(window.Hls.Events.ERROR, function(evt, data){
+        if (inst !== hlsInstance || !data) return;
+        if (!data.fatal){
+          console.warn("[hls] 非致命错误", data.type, data.details);
+          return;
+        }
+        console.warn("[hls] 致命错误", data.type, data.details);
+        if (retries < 2 && (data.type === window.Hls.ErrorTypes.NETWORK_ERROR ||
+                            data.type === window.Hls.ErrorTypes.MEDIA_ERROR)){
+          retries++;
+          if (data.type === window.Hls.ErrorTypes.NETWORK_ERROR){
+            inst.startLoad();          // 网络抖动：重新拉流
+          } else {
+            inst.recoverMediaError();  // 解码异常：尝试恢复
+          }
+        } else {
+          destroyHls();
+          vmVideo.removeAttribute("src");
+          try { vmVideo.load(); } catch (e){}
+          vmDesc.textContent = "视频加载失败，请检查网络后刷新页面重试。"
+        }
+      });
+    } else {
+      // Safari / iOS 原生支持 HLS，或普通 MP4 回退
+      vmVideo.src = w.file;
+      tryPlay();
+    }
   }
   function closeVideo(){
     vm.classList.remove("open");
     vm.setAttribute("aria-hidden", "true");
-    vmVideo.pause();
-    vmVideo.removeAttribute("src");
-    vmVideo.load();
+    resetVideo();
     document.body.style.overflow = "";
   }
   vm.addEventListener("click", function(e){

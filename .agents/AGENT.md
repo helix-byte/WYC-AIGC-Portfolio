@@ -87,7 +87,7 @@
 
 - [ ] `node --check js/main.js` 通过
 - [ ] HTML 标签闭合、资源引用无缺失（校验脚本见根 `AGENT.md` 5.4）
-- [ ] `WORKS` 中视频条目 `meta` 仍为三段式
+- [ ] `WORKS` 中视频条目 `meta` 为两段式（`画质 · 时长`），`file` 为多吉云永久直链且与 `assets/videos/m3u8_permalinks.json` 一致
 - [ ] 改动涉及 `resume.html` 时，已重新导出 `assets/王艺纯-简历.pdf` 并核对为 A4 单页
 - [ ] 改动涉及 CSS / JS 时，已递增 `index.html` 中的 `?v=` 版本号
 - [ ] 站内无 `YOUR-USERNAME`、旧姓名、旧联系方式等残留
@@ -118,7 +118,7 @@ git checkout -b fix/contact-info
 
 ### 7.2 替换作品数据
 
-`js/main.js` 的 `WORKS` 是唯一数据源。替换时同步处理：文件落地到 `assets/` 对应子目录、路径逐字一致、视频封面同名、图片转 WebP。改完在 `file://` 下双击 `index.html` 验证胶片条与弹窗。
+`js/main.js` 的 `WORKS` 是唯一数据源。替换时同步处理：图片 / 剧本文件落地到 `assets/` 对应子目录、路径逐字一致、视频封面同名、图片转 WebP；视频本身不落地仓库，改为把多吉云**永久直链**写入 `file`，并同步 `assets/videos/m3u8_permalinks.json`。改完用本地静态服务器打开 `index.html` 验证胶片条与弹窗播放（`file://` 下视频可能受跳域限制）。
 
 ### 7.3 修改简历版式
 
