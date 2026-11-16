@@ -49,7 +49,7 @@
 
 - [ ] `node --check js/main.js` 通过
 - [ ] HTML 闭合与资源引用无缺失（脚本见根 `AGENT.md` 5.4）
-- [ ] 视频 `meta` 两段式、`file` 为多吉云永久直链且与 `m3u8_permalinks.json` 一致
+- [ ] 视频 `meta` 两段式；视频条目只写 `vcode`，全文无 m3u8 / `permalink` 直链残留
 - [ ] 改动 `resume.html` 时已重新导出 PDF 并核对 A4 单页
 - [ ] 改动 CSS / JS 时已递增 `index.html` 的 `?v=`
 - [ ] 无 `YOUR-USERNAME`、旧姓名、旧联系方式残留

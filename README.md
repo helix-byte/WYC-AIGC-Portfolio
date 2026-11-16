@@ -11,7 +11,7 @@
 ## 快速开始
 
 1. 直接双击打开 `index.html` 即可在浏览器中浏览（无需安装任何软件、无需构建）。
-2. 剧本、封面、图片为仓库内本地文件；**视频为多吉云 CDN 上的 HLS 流**，播放时需要联网（页面用 HLS.js 拉流）。
+2. 剧本、封面、图片为仓库内本地文件；**视频由多吉云官方播放器 SDK（DogePlayer）播放**，播放时需要联网——每支视频只记录 VCode，播放地址由 SDK 实时向多吉云获取（自带防盗链与时效，页面上没有任何 m3u8 链接）。
 3. 每个视频使用同名「封面」图作为海报（封面仍是本地文件）。
 4. 简历 PDF：`assets/王艺纯-简历.pdf`（源文件 `resume.html`，改完后用浏览器打印成 PDF）。
 5. 分享预览图 `assets/og-cover.png`：发微信/QQ 时链接会显示精美卡片。
@@ -25,8 +25,6 @@ portfolio/
 ├── css/style.css         # 样式
 ├── js/main.js            # 交互逻辑 + 作品数据
 └── assets/
-    ├── videos/           # 视频永久直链清单（m3u8_permalinks.json；视频本体在 CDN）
-    ├── scripts/          # 分镜剧本（docx）
     ├── posters/          # 视频封面图（与视频同名，同时用于首页胶片条）
     ├── 王艺纯-简历.pdf     # 简历 PDF（下载用）
     ├── og-cover.png      # 社交平台分享预览图（1200×630）
@@ -45,16 +43,16 @@ portfolio/
 
 | 类型 | 说明 |
 | --- | --- |
-| `video` | AI 视频作品：`file` 填多吉云**永久 M3U8 直链**，`poster` 指向本地封面，`code` 是胶片编号（REEL xx），`meta` 是画质/时长（必须保持**两段**用 ` · ` 分隔） |
+| `video` | AI 视频作品：`vcode` 填多吉云视频的 **VCode**（16 位，控制台视频列表可复制；**不要填任何链接**），`poster` 指向本地封面，`code` 是胶片编号（REEL xx），`meta` 是画质/时长（必须保持**两段**用 ` · ` 分隔） |
 | `script` | 分镜剧本：`file` 指向 docx |
 | `image`（`cat:"asset"`） | AI 概念图 / 分镜资产 |
 | `image`（`cat:"design"`） | 视觉设计作品 |
 
 新增剧本/图片：把文件放进对应 `assets` 子目录，再在 `WORKS` 里加一条记录即可。
 
-新增视频：视频本体上传到多吉云视频云，在控制台复制该视频的**永久直链**（`https://permalink.dogevideo.com/player/get.m3u8?...`），同时登记到 `assets/videos/m3u8_permalinks.json` 与 `WORKS` 的 `file` 字段（两处需保持一致）。首页胶片条会自动收录所有 `video` 类型的作品。
+新增视频：视频本体上传到多吉云视频云，在控制台视频列表复制该视频的 **VCode**，写入 `WORKS` 的 `vcode` 字段即可（封面图放 `assets/posters/`）。首页胶片条会自动收录所有 `video` 类型的作品。
 
-> ℹ️ 视频为多吉云 CDN 直链，不在仓库内。若某条链接失效（换视频、换账号等），到多吉云控制台重新复制永久直链，同时替换 `assets/videos/m3u8_permalinks.json` 与 `js/main.js` 里对应条目即可。
+> ℹ️ 视频本体与播放地址都在多吉云，仓库里只存 **VCode**（`userId` 全站固定 16366，写在 `main.js` 的 `DOGE_USER_ID`）。播放地址由 DogePlayer SDK 每次实时获取并自动续期，因此**不要**在任何地方保存或粘贴 m3u8 直链——永久直链没有防盗链，公开即等于开放下载入口。建议同时在多吉云控制台开启 Referer 防盗链白名单。
 
 简历正文（个人概述、技能、实践经历、项目、教育等）直接编辑 `index.html` 里对应区块；简历 PDF 的排版源文件是 `resume.html`。
 

@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
-<link rel="stylesheet" href="css/style.css?v=20261028b">
+<link rel="stylesheet" href="css/style.css?v=20261117c">
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -317,13 +317,14 @@
       <span id="vmTag" class="tag"></span>
       <span id="vmMeta" class="vm-meta"></span>
     </div>
-    <video id="vmVideo" controls preload="metadata"></video>
+    <!-- 多吉云 DogePlayer 挂载容器：播放地址由 SDK 动态获取，页面不接触任何 M3U8 URL -->
+    <div class="vm-player" id="dogePlayer"></div>
     <p id="vmDesc" class="vm-desc"></p>
   </div>
 </div>
 
-<!-- HLS.js：非 Safari 浏览器播放 M3U8 流（Safari/iOS 走原生 HLS） -->
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<script src="js/main.js?v=20261117"></script>
+<!-- 多吉云官方播放器 SDK：官方明确仅支持 CDN 引入，不支持 NPM 安装或部署到本地 -->
+<script type="text/javascript" src="https://player.dogecloud.com/js/loader"></script>
+<script src="js/main.js?v=20261117d"></script>
 </body>
 </html>
