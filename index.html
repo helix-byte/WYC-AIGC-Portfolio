@@ -155,7 +155,7 @@
     <div class="section-head reveal">
       <p class="kicker">WORKS · 作品</p>
       <h2 class="sec-title">作品片场</h2>
-      <!-- TODO: 作品区目前为示例数据（源自原模板），替换方案见 js/main.js 顶部 WORKS 数组 -->
+      <!-- 作品数据见 js/main.js 顶部 WORKS 数组；视频为多吉云永久直链（HLS 流） -->
       <p class="sec-sub">点击卡片播放或查看大图</p>
     </div>
     <div class="filters reveal" id="filters">
@@ -322,6 +322,8 @@
   </div>
 </div>
 
-<script src="js/main.js?v=20261028"></script>
+<!-- HLS.js：非 Safari 浏览器播放 M3U8 流（Safari/iOS 走原生 HLS） -->
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="js/main.js?v=20261117"></script>
 </body>
 </html>
