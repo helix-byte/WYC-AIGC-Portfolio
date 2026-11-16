@@ -10,43 +10,45 @@
 
   /* ---------- 作品数据 ---------- */
   var WORKS = [
-    /* ---- AI 视频 ---- */
+    /* ---- AI 视频 ----
+     视频只用多吉云 vcode（userId 全局固定为 DOGE_USER_ID），播放地址由 DogePlayer SDK
+     在每次播放时向多吉云动态获取，仓库内不保存、不拼接任何 M3U8 链接。 */
     {id:"v1", type:"video", cat:"video", code:"REEL 01", title:"空白应答", tag:"定格动画情绪短片",
-     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=63688c8b6938c32f&userId=16366&flsign=aec65aa2bb2539755be653ca9101c9bb&ext=.m3u8", poster:"assets/posters/1.定格动画情绪短片《空白应答》.webp",
+     vcode:"a2c2d9f998f8f3d9", poster:"assets/posters/1.定格动画情绪短片《空白应答》.webp",
      meta:"720P · 01:50",
      desc:"一个房间花了四十年把自己变成了人的身体。人离开后，它仍然在等。—— 定格动画质感的 AI 情绪短片，约 135 秒，即梦 AI 图生视频。"},
     {id:"v11", type:"video", cat:"video", code:"REEL 02", title:"文艺复兴《暴风雨》", tag:"文艺复兴 · 无台词短片",
-     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=657cb7af522bc114&userId=16366&flsign=b0ea21f2c6c6f495a6fcd5d5fc86073f&ext=.m3u8", poster:"assets/posters/文艺复兴《暴风雨》.webp",
+     vcode:"df1bafa6cd4b990a", poster:"assets/posters/文艺复兴《暴风雨》.webp",
      meta:"720P · 01:58",
      desc:"文艺复兴油画美学 × 无台词叙事：110 秒、10 个镜头、40 个生成单元。从金笼里的婚约，到暴雨中的奔跑——结尾不是殉情，而是两个人共同选择未来。"},
     {id:"v2", type:"video", cat:"video", code:"REEL 03", title:"惊悚风格练习", tag:"风格练习",
-     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=32c7db0061860ca1&userId=16366&flsign=92f1811837827c967eb009e98205f27c&ext=.m3u8", poster:"assets/posters/2.惊悚风格练习.webp",
+     vcode:"7eb97c7dd2554fbd", poster:"assets/posters/2.惊悚风格练习.webp",
      meta:"720P · 00:44",
      desc:"惊悚氛围的 AI 视频风格练习片段。"},
     {id:"v3", type:"video", cat:"video", code:"REEL 04", title:"黑神话风格练习", tag:"风格练习",
-     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=69dd4e3d32900c50&userId=16366&flsign=63958203a44a596e3065dcd8d042f14d&ext=.m3u8", poster:"assets/posters/3.黑神话风格练习.webp",
+     vcode:"5a32ae711b34c92a", poster:"assets/posters/3.黑神话风格练习.webp",
      meta:"720P · 00:15",
      desc:"黑神话风格东方女祭司的风格练习片段。"},
     {id:"v4", type:"video", cat:"video", code:"REEL 05", title:"巨兽风格练习", tag:"风格练习",
-     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=983aba9b6cdc7a5e&userId=16366&flsign=e80867676fcfb3d210505335aa39460c&ext=.m3u8", poster:"assets/posters/4.巨兽风格练习.webp",
+     vcode:"2e6276a1678376dc", poster:"assets/posters/4.巨兽风格练习.webp",
      meta:"720P · 00:09", desc:"巨兽题材的 AI 视频风格练习片段。"},
     {id:"v5", type:"video", cat:"video", code:"REEL 06", title:"人物微表情练习 1", tag:"风格练习",
-     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=71c9a7400c145234&userId=16366&flsign=8294d785562fc1a98ff7f8d77e1aea90&ext=.m3u8", poster:"assets/posters/5.人物微表情练习1.webp",
+     vcode:"dc43e22aff54c2bf", poster:"assets/posters/5.人物微表情练习1.webp",
      meta:"720P · 00:10", desc:"人物微表情与表演细节的 AI 视频练习片段。"},
     {id:"v6", type:"video", cat:"video", code:"REEL 07", title:"人物微表情练习 2", tag:"风格练习",
-     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=c9717fd9270a928e&userId=16366&flsign=a097ababead05bb3600db7ffc4ede241&ext=.m3u8", poster:"assets/posters/6.人物微表情练习2.webp",
+     vcode:"2fc6157cc3ad33ce", poster:"assets/posters/6.人物微表情练习2.webp",
      meta:"720P · 00:10", desc:"人物微表情与表演细节的 AI 视频练习片段。"},
     {id:"v7", type:"video", cat:"video", code:"REEL 08", title:"真人短片片段", tag:"真人质感",
-     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=075ab6dcf3a570fe&userId=16366&flsign=dc997c14c462a149f5a3be02f8c325ac&ext=.m3u8", poster:"assets/posters/7.真人短片片段.webp",
+     vcode:"4aa366285af95ed8", poster:"assets/posters/7.真人短片片段.webp",
      meta:"720P · 01:21", desc:"接近真人实拍质感的 AI 视频片段练习。"},
     {id:"v8", type:"video", cat:"video", code:"REEL 09", title:"巨兽风格练习 2", tag:"风格练习",
-     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=91eab18bd14d7935&userId=16366&flsign=ba4a1c9ff01edf8338a0b682ad993054&ext=.m3u8", poster:"assets/posters/巨兽风格练习2.webp",
+     vcode:"2ad350e0af7e883d", poster:"assets/posters/巨兽风格练习2.webp",
      meta:"720P · 00:07", desc:"巨兽题材 AI 视频的续作练习片段。"},
     {id:"v9", type:"video", cat:"video", code:"REEL 10", title:"海外短剧片段 1", tag:"海外短剧",
-     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=590f58ca74db4987&userId=16366&flsign=75f660e07ad4be6d2b4e5e40d18606ad&ext=.m3u8", poster:"assets/posters/海外短剧片段1.webp",
+     vcode:"b63adb3e0f01f8a4", poster:"assets/posters/海外短剧片段1.webp",
      meta:"720P · 01:12", desc:"海外短剧片段 —— 竖屏叙事的节奏与表演调度练习。"},
     {id:"v10", type:"video", cat:"video", code:"REEL 11", title:"海外短剧片段 2", tag:"海外短剧",
-     file:"https://permalink.dogevideo.com/player/get.m3u8?vcode=8d2f2ad9c345c8cd&userId=16366&flsign=b63e6341406c48963c02357785cdcd65&ext=.m3u8", poster:"assets/posters/海外短剧片段2.webp",
+     vcode:"a4cb2e3b4036fb9a", poster:"assets/posters/海外短剧片段2.webp",
      meta:"720P · 01:30", desc:"海外短剧片段 —— 竖屏构图的叙事节奏练习。"},
 
     /* ---- 剧本创作 ---- */
@@ -110,7 +112,7 @@
   var lbImg = document.getElementById("lbImg");
   var lbCap = document.getElementById("lbCap");
   var vm = document.getElementById("videoModal");
-  var vmVideo = document.getElementById("vmVideo");
+  var playerBox = document.getElementById("dogePlayer");
   var vmTitle = document.getElementById("vmTitle");
   var vmTag = document.getElementById("vmTag");
   var vmMeta = document.getElementById("vmMeta");
@@ -118,7 +120,11 @@
 
   var currentFilter = "all";
   var lbIndex = -1;
-  var hlsInstance = null;   // 当前 HLS.js 实例（若正在播放 M3U8 流）
+
+  /* ---------- DogePlayer 全局参数 ---------- */
+  var DOGE_USER_ID = 16366;   // 多吉云用户 ID，全站固定，不写入每条视频
+  var dogePlayer = null;      // 当前 DogePlayer 实例（同一时间只允许存在一个）
+  var currentVideo = null;    // 当前弹窗内的作品（用于异步回调时校验）
 
   function esc(s){
     return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
@@ -205,25 +211,38 @@
     else openLightboxAt(w);
   }
 
-  /* ---------- 视频弹窗 ---------- */
-  function tryPlay(){
-    var p = vmVideo.play();
-    if (p && p.catch) p.catch(function(){});
-  }
-
-  function destroyHls(){
-    if (hlsInstance){
-      try { hlsInstance.destroy(); } catch (e){}
-      hlsInstance = null;
+  /* ---------- 视频弹窗（多吉云 DogePlayer） ---------- */
+  // 销毁当前实例：官方文档给出的方法名是 destroy()（不是 dispose）
+  function destroyPlayer(){
+    if (dogePlayer){
+      try { dogePlayer.destroy(); } catch (e){ console.warn("[DogePlayer] 销毁实例失败", e); }
+      dogePlayer = null;
     }
+    if (playerBox) playerBox.innerHTML = "";   // 清掉 SDK 注入的残留 DOM
   }
 
-  // 停止并清空当前视频（含 HLS 实例），供切片与关闭弹窗复用
-  function resetVideo(){
-    destroyHls();
-    try { vmVideo.pause(); } catch (e){}
-    vmVideo.removeAttribute("src");
-    try { vmVideo.load(); } catch (e){}
+  // 创建播放器：播放地址由 SDK 向多吉云实时获取并自动续期，前端不接触任何 M3U8 URL
+  function createPlayer(w){
+    if (typeof window.DogePlayer !== "function"){
+      console.error("[DogePlayer] 播放器 SDK 未加载：预期由 https://player.dogecloud.com/js/loader 提供 DogePlayer 构造函数。请检查网络连通性，以及广告拦截插件是否屏蔽了该域名。");
+      return null;
+    }
+    return new window.DogePlayer({
+      container: playerBox,   // 必需 · DOM 对象（传字符串也会经 querySelector，但不接受 jQuery 对象）
+      userId: DOGE_USER_ID,   // 必需 · Int
+      vcode: w.vcode,         // 必需 · String
+      autoPlay: false         // 可选 · 官方建议保持关闭（浏览器自动播放限制）
+    });
+  }
+
+  // 安全创建：SDK 内部抛异常时不应打断弹窗流程
+  function startPlayer(w){
+    try {
+      return createPlayer(w);
+    } catch (e){
+      console.error("[DogePlayer] 播放器初始化异常", e);
+      return null;
+    }
   }
 
   function openVideo(w){
@@ -235,57 +254,25 @@
     vm.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
-    // 先释放上一支视频的资源（若有 HLS 实例则销毁）
-    resetVideo();
+    // 切换视频：先销毁旧实例，避免多个播放器并存
+    currentVideo = w;
+    destroyPlayer();
+    dogePlayer = startPlayer(w);
 
-    var isHls = /\.m3u8(\?|#|$)/i.test(w.file);
-
-    if (isHls && window.Hls && window.Hls.isSupported()){
-      var retries = 0;
-      var inst = new window.Hls({
-        enableWorker: true,
-        lowLatencyMode: false,
-        maxBufferLength: 30
-      });
-      hlsInstance = inst;
-      inst.loadSource(w.file);
-      inst.attachMedia(vmVideo);
-      inst.on(window.Hls.Events.MANIFEST_PARSED, function(){
-        if (inst !== hlsInstance) return;   // 已切到别的视频，忽略旧实例回调
-        tryPlay();
-      });
-      inst.on(window.Hls.Events.ERROR, function(evt, data){
-        if (inst !== hlsInstance || !data) return;
-        if (!data.fatal){
-          console.warn("[hls] 非致命错误", data.type, data.details);
-          return;
-        }
-        console.warn("[hls] 致命错误", data.type, data.details);
-        if (retries < 2 && (data.type === window.Hls.ErrorTypes.NETWORK_ERROR ||
-                            data.type === window.Hls.ErrorTypes.MEDIA_ERROR)){
-          retries++;
-          if (data.type === window.Hls.ErrorTypes.NETWORK_ERROR){
-            inst.startLoad();          // 网络抖动：重新拉流
-          } else {
-            inst.recoverMediaError();  // 解码异常：尝试恢复
-          }
-        } else {
-          destroyHls();
-          vmVideo.removeAttribute("src");
-          try { vmVideo.load(); } catch (e){}
-          vmDesc.textContent = "视频加载失败，请检查网络后刷新页面重试。"
-        }
-      });
-    } else {
-      // Safari / iOS 原生支持 HLS，或普通 MP4 回退
-      vmVideo.src = w.file;
-      tryPlay();
+    if (!dogePlayer){
+      // loader 可能仍在加载中，稍后重试一次；期间用户已关闭弹窗或切了别的视频则放弃
+      setTimeout(function(){
+        if (dogePlayer || currentVideo !== w || !vm.classList.contains("open")) return;
+        dogePlayer = startPlayer(w);
+        if (!dogePlayer) vmDesc.textContent = "播放器初始化失败：多吉云播放器 SDK 未能加载，请检查网络后刷新页面重试。";
+      }, 800);
     }
   }
   function closeVideo(){
     vm.classList.remove("open");
     vm.setAttribute("aria-hidden", "true");
-    resetVideo();
+    currentVideo = null;
+    destroyPlayer();
     document.body.style.overflow = "";
   }
   vm.addEventListener("click", function(e){

@@ -17,7 +17,7 @@
 - **零构建零依赖**：无 `package.json`、无 `node_modules`、无打包器；不得引入 npm 依赖、框架、CSS 预处理器或构建步骤。
 - **原生三件套**：`index.html` + `css/style.css` + `js/main.js`；`main.js` 是 IIFE，沿用 ES5（`var` + 函数声明）风格。
 - **资源本地优先**：字体、图片、剧本等一律仓库内文件，禁止外链。
-- **唯一外链**：视频走多吉云 HLS，`main.js` 中为 `https://permalink.dogevideo.com/player/get.m3u8?...` 永久直链，播放器为 jsDelivr 上的 HLS.js —— 故**视频播放需联网**，其余区块可离线。
+- **唯一外链**：视频走**多吉云官方播放器 SDK（DogePlayer）**，`index.html` 引入 `https://player.dogecloud.com/js/loader`（官方明确不支持 NPM 安装或本地部署）。`main.js` 只保存 `vcode`，播放地址由 SDK 每次播放时向多吉云实时获取并自动续期 —— **仓库与页面中不存在任何 M3U8 链接**。故**视频播放需联网**，其余区块可离线。
 - **双击可用**：`file://` 下须正常渲染（视频受跨域限制，建议本地静态服务器预览），改完按此场景自测。
 
 ## 3. 目录
@@ -28,7 +28,6 @@
 ├── css/style.css        # 全站样式（hero 背景图约第 95 行）
 ├── js/main.js          # 交互逻辑 + 作品数据 WORKS
 ├── assets/
-│   ├── videos/         # 仅 m3u8_permalinks.json（视频本体在 CDN）
 │   ├── posters/        # 视频封面 webp，与视频同名，兼作首页胶片条
 │   ├── scripts/        # 分镜剧本 docx
 │   ├── images/ai|design/  # AI 概念图 / 视觉设计作品（webp）
@@ -44,8 +43,8 @@
 作品区完全由 `main.js` 顶部 `WORKS` 数组驱动（当前 42 条：11 视频 + 4 剧本 + 27 图片）：`WORKS` → `buildReel()` 生成首页胶片条（仅 `type:"video"`）、`render()`/`cardHTML()` 生成卡片与筛选、`openVideo()`/`openLightboxAt()` 弹窗。
 
 ```js
-// 视频：file 为多吉云永久直链
-{id:"v1", type:"video", cat:"video", code:"REEL 01", title, tag, file, poster:"assets/posters/x.webp", meta:"720P · 01:50", desc}
+// 视频：vcode 为多吉云 VCode；userId 全局固定（DOGE_USER_ID），不写入条目
+{id:"v1", type:"video", cat:"video", code:"REEL 01", title, tag, vcode, poster:"assets/posters/x.webp", meta:"720P · 01:50", desc}
 // 剧本
 {id:"s1", type:"script", cat:"script", code:"SCRIPT 01", title, tag, file:"assets/scripts/x.docx", sub:"《…》", meta, desc}
 // 图片
@@ -55,7 +54,7 @@
 硬约束：
 
 1. 视频 `meta` 必须是 `画质 · 时长` **两段**：`reelFrameHTML()` 用 `meta.split(" · ")[1]` 取时长，缺段会显示 `undefined`。
-2. 视频 `file` 只用 `permalink.dogevideo.com` **永久直链**，不得用 `pl.dogevideo.com` 带 `tm/sign` 的临时地址（会过期）；并须与 `assets/videos/m3u8_permalinks.json` 同步。
+2. 视频**只写 `vcode`**（16 位十六进制，取自多吉云控制台视频列表或视频信息 API）。禁止写入任何 M3U8 直链、`permalink.dogevideo.com` 域名或 `flsign` 签名参数 —— 永久直链无防盗链能力，公开即等于开放下载入口。`userId` 由 `DOGE_USER_ID`（16366）统一提供，不得逐条重复。
 3. `id` 全数组唯一（胶片条与弹窗靠它关联）。
 4. `cat` ∈ `video` / `script` / `asset` / `design`，与 `#filters` 的 `data-filter` 一一对应；新增分类须同步改 `index.html` 筛选按钮与 `render()`。
 
@@ -67,7 +66,7 @@
 
 ### 5.2 新增 / 替换作品
 
-1. 视频：上传多吉云，取**永久直链**，登记 `assets/videos/m3u8_permalinks.json`，写入 `WORKS` 的 `file`。
+1. 视频：上传多吉云，从控制台视频列表复制 **VCode**，写入 `WORKS` 的 `vcode`（封面另存 `assets/posters/`）。
 2. 封面放 `assets/posters/`，与视频同名（webp）。
 3. 剧本 / 图片放 `assets/scripts/`、`assets/images/ai|design/`。
 4. 改 `WORKS`，路径与文件名逐字一致；图片统一转 WebP。
@@ -106,11 +105,12 @@ const idx=fs.readFileSync('index.html','utf8');
 const refs=[...new Set([...idx.matchAll(/(?:href|src)="((?!http|#|tel:|mailto:)[^"]+)"/g)]
   .map(m=>m[1].split('?')[0]))];
 console.log('index.html 缺失资源:',refs.filter(p=>!fs.existsSync(p)).join(' | ')||'无');
-const per=fs.readFileSync('assets/videos/m3u8_permalinks.json','utf8');
-const vids=[...fs.readFileSync('js/main.js','utf8')
-  .matchAll(/type:"video"[\s\S]*?title:"([^"]+)"[\s\S]*?file:"([^"]+)"/g)];
-console.log('直链与 permalinks 不同步:',
-  vids.filter(m=>!per.includes(m[2])).map(m=>m[1]).join(' | ')||'无');
+const src=fs.readFileSync('js/main.js','utf8');
+const vcodes=[...src.matchAll(/type:"video"[\s\S]*?vcode:"([0-9a-f]{16})"/g)].map(m=>m[1]);
+console.log('视频条数:',vcodes.length,'| vcode 重复:',
+  vcodes.filter((v,i)=>vcodes.indexOf(v)!==i).join(' | ')||'无');
+const leak=[...src.matchAll(/[\w/.:-]*permalink\.dogevideo\.com[^\s"]*|[\w/.:-]*\.m3u8[^\s"]*/g)];
+console.log('残留直链/流地址:',leak.map(m=>m[0]).join(' | ')||'无');
 JS
 ```
 
@@ -126,12 +126,12 @@ JS
 | 写入 / 校验 | 只改文件用 `edit`/`write`；校验脚本走 stdin（`node - <<'JS'`），不落地临时文件 |
 | 单文件体积 | ≤ 100MB（GitHub 限制），当前最大约 710KB（`og-cover.png`） |
 | 图片 | WebP，单图尽量 < 500KB |
-| 外链 | 仅多吉云 HLS 与 HLS.js（jsDelivr） |
+| 外链 | 仅多吉云 DogePlayer SDK（`https://player.dogecloud.com/js/loader`）；页不得出现 m3u8 地址 |
 | 兼容性 | 现代浏览器 + `file://` 双击打开 |
 
 ## 7. 已知状态
 
-- 视频已全部迁至多吉云永久直链（清单 `assets/videos/m3u8_permalinks.json`），仓库内无 MP4；
+- 视频改为**DogePlayer + `vcode`** 播放：11 条视频各存一个 VCode，播放地址由 SDK 动态获取。仓库内无 MP4、无 M3U8 直链（旧的 `assets/videos/m3u8_permalinks.json` 永久直链清单已删除，对应视频也已重建使旧链接失效）；
 - 站点已上线，核对线上用 `curl -I` 访问页面与资源；勿用 GitHub Pages API 作判据（匿名请求可能 404）。
 - `assets/og-cover.png` 约 710KB，可压缩至 200KB 以内。
 - 远端仅 `main` 一个分支，无长期保留分支。

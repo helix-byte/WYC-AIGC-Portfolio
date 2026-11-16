@@ -401,7 +401,9 @@ button{font-family:inherit}
 .vm-head{display:flex;align-items:baseline;gap:14px;padding:18px 24px 14px;flex-wrap:wrap}
 .vm-head h3{font-family:var(--serif);font-size:19px;letter-spacing:.06em}
 .vm-meta{font-family:var(--mono);font-size:11.5px;color:var(--faint);letter-spacing:.12em;margin-left:auto}
-.vm-box video{width:100%;max-height:72vh;background:#000;display:block}
+/* DogePlayer 挂载容器：SDK 在内部注入自己的播放器 DOM，这里只约束外框尺寸 */
+.vm-player{width:100%;aspect-ratio:16 / 9;max-height:72vh;background:#000;display:block;overflow:hidden}
+.vm-player video,.vm-player iframe{width:100%;height:100%;display:block;border:0}
 .vm-desc{color:var(--mist);font-size:14px;padding:14px 24px 20px;line-height:1.8}
 .vm-close{position:absolute;top:12px;right:14px;z-index:2;background:rgba(0,0,0,.45);border:none;
   color:#fff;width:36px;height:36px;border-radius:50%;font-size:20px;cursor:pointer;transition:.3s}
