@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>王艺纯 · 简历</title>
+<style>
+  :root{
+    --ink:#12161f;
+    --ink-2:#1a1f2a;
+    --paper:#fbfaf7;
+    --text:#1d2129;
+    --muted:#5c6470;
+    --faint:#8a8f99;
+    --amber:#c8872f;
+    --amber-soft:#e5a33c;
+    --line:#ddd8cf;
+    --serif:"SimSun","Songti SC","Noto Serif SC",serif;
+    --sans:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif;
+    --mono:"Consolas","SF Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  @page{size:A4;margin:0}
+  html,body{width:210mm;height:297mm;background:#fff;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-family:var(--sans);color:var(--text);font-size:8.6pt;line-height:1.62}
+  ul{list-style:none}
+
+  .page{width:210mm;height:297mm;display:flex;background:var(--paper);overflow:hidden}
+
+  /* ================= 左侧深色栏 ================= */
+  .side{
+    width:62mm;flex:none;background:var(--ink);color:#e9e5dd;
+    padding:9mm 7.5mm 7mm;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+  .side::before{
+    content:"";position:absolute;width:120mm;height:120mm;border-radius:50%;
+    right:-72mm;top:-60mm;
+    background:radial-gradient(circle,rgba(229,163,60,.16),rgba(229,163,60,0) 62%);
+  }
+  .side::after{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:1.1mm;
+    background:linear-gradient(180deg,var(--amber-soft),rgba(200,135,47,.15) 55%,transparent);
+  }
+  .side > *{position:relative;z-index:1}
+
+  .photo-wrap{position:relative;width:43mm;margin:0 auto 7mm}
+  .photo-wrap::before{
+    content:"";position:absolute;inset:2.2mm -2.2mm -2.2mm 2.2mm;
+    border:.45mm solid rgba(229,163,60,.6);border-radius:2mm;
+  }
+  .photo{
+    position:relative;width:43mm;height:57.3mm;object-fit:cover;object-position:center 22%;
+    border-radius:2mm;border:.35mm solid rgba(255,255,255,.22);display:block;
+  }
+
+  .side-block{margin-bottom:5.6mm}
+  .side-label{
+    font-family:var(--mono);font-size:6.6pt;letter-spacing:.22em;color:var(--amber-soft);
+    display:flex;align-items:center;gap:2.2mm;margin-bottom:2.4mm;
+  }
+  .side-label::after{content:"";height:.3mm;flex:1;background:rgba(229,163,60,.28)}
+
+  .contact-line{margin-bottom:2.2mm;display:flex;flex-direction:column;gap:.4mm}
+  .contact-k{font-family:var(--mono);font-size:6.2pt;letter-spacing:.16em;color:#8d95a3}
+  .contact-v{font-size:8.2pt;color:#f0ede6;letter-spacing:.02em}
+
+  .fact{margin-bottom:2mm}
+  .fact-k{font-size:6.8pt;color:#8d95a3;letter-spacing:.08em}
+  .fact-v{font-size:8.4pt;color:#f0ede6;font-weight:600}
+
+  .chips{display:flex;flex-wrap:wrap;gap:1.4mm}
+  .chip{
+    font-size:7pt;line-height:1.5;padding:.7mm 2.2mm;border-radius:999px;
+    color:#e8d4b4;border:.25mm solid rgba(229,163,60,.35);background:rgba(229,163,60,.07);
+  }
+  .side-note{font-size:7.6pt;color:#c9c4ba;line-height:1.62}
+  .side-note b{color:#f0ede6;font-weight:600}
+
+  .qr-block{margin-top:auto;padding-top:4mm}
+  .qr-row{display:flex;align-items:center;gap:3mm}
+  .qr-tile{background:#fff;padding:1.4mm;border-radius:1.6mm;width:19mm;height:19mm;flex:none}
+  .qr-tile img{width:100%;height:100%;display:block}
+  .qr-text{font-size:6.9pt;color:#aab0bb;line-height:1.55}
+  .qr-text b{display:block;color:#f0ede6;font-size:7.6pt;letter-spacing:.06em;margin-bottom:.6mm}
+  .side-foot{
+    margin-top:4mm;padding-top:2.6mm;border-top:.25mm solid rgba(255,255,255,.12);
+    font-family:var(--mono);font-size:6pt;letter-spacing:.2em;color:#6d7480;
+    display:flex;justify-content:space-between;
+  }
+
+  /* ================= 右侧主内容 ================= */
+  .main{
+    width:148mm;flex:none;background:var(--paper);
+    padding:11mm 11mm 8mm 10mm;display:flex;flex-direction:column;
+  }
+  .kicker{
+    font-family:var(--mono);font-size:7pt;letter-spacing:.26em;color:#a4661c;
+    text-transform:uppercase;
+  }
+  .name{
+    font-family:var(--serif);font-size:30pt;font-weight:700;letter-spacing:.14em;
+    line-height:1.15;margin-top:1.2mm;
+  }
+  .name-rule{width:15mm;height:1.1mm;background:var(--amber);margin:2.2mm 0 2.4mm}
+  .headline{font-size:9.4pt;font-weight:700;letter-spacing:.04em}
+  .headline span{color:var(--amber)}
+  .meta{font-size:8pt;color:var(--muted);margin-top:.8mm;letter-spacing:.06em}
+
+  .sec{margin-top:4.6mm}
+  .sec-head{display:flex;align-items:baseline;gap:2mm;border-bottom:.25mm solid var(--line);
+    padding-bottom:1.2mm;margin-bottom:2.4mm}
+  .sec-mark{width:1.7mm;height:1.7mm;background:var(--amber);border-radius:.3mm;flex:none;transform:translateY(-.15mm)}
+  .sec-cn{font-size:10pt;font-weight:700;letter-spacing:.16em}
+  .sec-en{font-family:var(--mono);font-size:6.3pt;letter-spacing:.2em;color:#a08b6a;margin-left:auto;text-transform:uppercase}
+
+  .para{font-size:8.5pt;color:#3f454f;line-height:1.72;text-align:justify}
+  .para + .para{margin-top:1.4mm}
+  .para b{color:var(--text)}
+
+  .job{position:relative;padding-left:3.6mm;margin-bottom:2.8mm}
+  .job:last-child{margin-bottom:0}
+  .job::before{content:"";position:absolute;left:0;top:1mm;bottom:.4mm;width:.28mm;background:#e4ddd2}
+  .job::after{content:"";position:absolute;left:-.55mm;top:.9mm;width:1.4mm;height:1.4mm;border-radius:50%;
+    background:var(--amber);box-shadow:0 0 0 .55mm rgba(200,135,47,.14)}
+  .job-head{display:flex;align-items:baseline;gap:1.8mm;flex-wrap:wrap}
+  .job-role{font-size:9.1pt;font-weight:700;letter-spacing:.03em}
+  .job-org{font-size:8.4pt;color:#a4661c;font-weight:600}
+  .job-date{font-family:var(--mono);font-size:7.4pt;color:var(--faint);margin-left:auto;white-space:nowrap;letter-spacing:.02em}
+  .job ul{margin-top:.8mm}
+  .job li{position:relative;padding-left:3mm;font-size:8.3pt;color:#464c56;line-height:1.6}
+  .job li::before{content:"·";position:absolute;left:.4mm;top:-.2mm;color:var(--amber);font-weight:700;font-size:10pt}
+
+  .proj{margin-bottom:2.4mm}
+  .proj:last-child{margin-bottom:0}
+  .proj-title{font-size:8.9pt;font-weight:700;display:flex;align-items:center;gap:1.8mm}
+  .proj-title .badge{
+    font-size:6.4pt;font-weight:400;color:#a4661c;border:.25mm solid rgba(200,135,47,.4);
+    border-radius:999px;padding:.2mm 1.8mm;letter-spacing:.06em;
+  }
+  .proj p{font-size:8.3pt;color:#464c56;line-height:1.66;margin-top:.6mm}
+
+  .edu{margin-bottom:2.4mm}
+  .edu:last-child{margin-bottom:0}
+  .edu-head{display:flex;align-items:baseline;gap:1.8mm;flex-wrap:wrap}
+  .edu-school{font-size:8.9pt;font-weight:700}
+  .edu-major{font-size:8.4pt;color:#a4661c;font-weight:600}
+  .edu-date{font-family:var(--mono);font-size:7.4pt;color:var(--faint);margin-left:auto}
+  .edu p{font-size:8.3pt;color:#464c56;line-height:1.62;margin-top:.6mm}
+
+  .main-foot{
+    margin-top:auto;padding-top:3mm;border-top:.25mm solid var(--line);
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:var(--mono);font-size:6.6pt;letter-spacing:.1em;color:#9aa0aa;
+  }
+  .main-foot b{color:#a4661c;font-weight:600}
+  .print-tip{position:fixed;right:8mm;bottom:8mm;background:#12161f;color:#fff;font-size:8pt;
+    padding:2mm 5mm;border-radius:99px;opacity:.9}
+  @media print{.print-tip{display:none}}
+</style>
+</head>
+<body>
+<div class="print-tip">按 Ctrl+P 可另存为 PDF</div>
+<div class="page">
+
+  <aside class="side">
+    <div class="photo-wrap">
+      <img class="photo" src="assets/证件照.jpg" alt="王艺纯证件照">
+    </div>
+
+    <div class="side-block">
+      <div class="side-label">CONTACT · 联系方式</div>
+      <div class="contact-line"><span class="contact-k">TEL</span><span class="contact-v">17742733852</span></div>
+      <div class="contact-line"><span class="contact-k">MAIL</span><span class="contact-v">17742733852@163.com</span></div>
+      <div class="contact-line"><span class="contact-k">WECHAT · 微信</span><span class="contact-v">wyc17742733852</span></div>
+    </div>
+
+    <div class="side-block">
+      <div class="side-label">TARGET · 求职信息</div>
+      <div class="fact"><div class="fact-k">求职意向</div><div class="fact-v">AIGC 影视编辑</div></div>
+      <div class="fact"><div class="fact-k">期望城市</div><div class="fact-v">沈阳</div></div>
+      <div class="fact"><div class="fact-k">到岗时间</div><div class="fact-v">可随时到岗</div></div>
+    </div>
+
+    <div class="side-block">
+      <div class="side-label">TOOLS · 常用工具</div>
+      <div class="chips">
+        <span class="chip">Photoshop</span><span class="chip">Premiere</span><span class="chip">After Effects</span>
+        <span class="chip">剪映</span><span class="chip">可灵</span><span class="chip">即梦</span>
+        <span class="chip">AI 生图 · 生视频</span><span class="chip">提示词</span><span class="chip">调色 · 卡点</span>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <div class="side-label">EXTRA · 附加信息</div>
+      <div class="side-note"><b>国家励志奖学金</b>、<b>校级一等奖学金</b>；计算机二级证书；在校任学习委员并兼任多门专业课课代表。</div>
+    </div>
+
+    <div class="qr-block">
+      <div class="qr-row">
+        <div class="qr-tile"><img src="assets/qr-portfolio.png" alt="作品集二维码"></div>
+        <div class="qr-text"><b>在线作品集</b>扫码查看视频、剧本与视觉设计作品</div>
+      </div>
+      <div class="side-foot"><span>PORTFOLIO</span><span>2026</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="kicker">AIGC Film Editing / Post-Production</div>
+    <h1 class="name">王艺纯</h1>
+    <div class="name-rule"></div>
+    <div class="headline">求职意向：<span>AIGC 影视编辑</span></div>
+    <div class="meta">男 · 24 岁 · 数字媒体艺术 / 网络工程 · 期望城市：沈阳</div>
+
+    <section class="sec">
+      <div class="sec-head"><span class="sec-mark"></span><span class="sec-cn">个人概述</span><span class="sec-en">Profile</span></div>
+      <p class="para">在校期间恰逢 AI 技术快速迭代，对 AI 生成工具保持持续兴趣，跟进并实际使用各类 AI 产品完成图像与视频创作。<b>熟练掌握 PS、PR、AE</b>，能灵活结合<b>可灵、即梦与剪映</b>完成从生图、生视频到剪辑后期的完整流程；做事专注沉稳、善于思考，有较强的团队合作意识与跨部门沟通能力。</p>
+      <p class="para">有校外剪辑接单经验，能够按需求完成粗剪、精剪与成片交付；希望有机会在沈阳从事 AIGC 视频生成或剪辑相关工作。</p>
+    </section>
+
+    <section class="sec">
+      <div class="sec-head"><span class="sec-mark"></span><span class="sec-cn">实践经历</span><span class="sec-en">Experience</span></div>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-role">宣传部干事</span>
+          <span class="job-org">大连枫叶职业技术学院 · 学生会</span>
+          <span class="job-date">2022.12 — 2025.06</span>
+        </div>
+        <ul>
+          <li>负责策划及组织校学生会各项活动，从选题、流程安排到现场执行全程参与，保证活动按期落地。</li>
+          <li>负责学校官方公众号的选题策划与内容编辑，兼顾图文排版与发布节奏，持续输出稳定内容。</li>
+          <li>组织部门干事开展宣传工作，协调各部门沟通协作，推动校园活动宣传落地。</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <span class="job-role">视频剪辑接单</span>
+          <span class="job-org">校外兼职 · 自由接单</span>
+          <span class="job-date">2022 — 2025 · 在校期间</span>
+        </div>
+        <ul>
+          <li>承接校外短视频剪辑需求，根据客户素材与脚本完成粗剪、精剪与成片交付。</li>
+          <li>使用 Premiere / After Effects / 剪映 完成剪辑、字幕、调色与简单动效包装，按时交片、细心负责。</li>
+          <li>对素材分类归档，便于按客户意见快速修改与版本迭代。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-head"><span class="sec-mark"></span><span class="sec-cn">项目经验</span><span class="sec-en">Projects</span></div>
+      <div class="proj">
+        <div class="proj-title">AI 图像与视频创作实践 <span class="badge">个人项目</span></div>
+        <p>围绕 AI 生成与后期剪辑持续练习：用即梦 / 可灵 生成角色、场景与关键帧，再用 Photoshop 精修画面、统一风格；随后在 Premiere / After Effects / 剪映 中完成剪辑、卡点、调色、字幕与音效并输出成片。题材涵盖情绪短片与风格化视觉练习，工作流以提示词迭代 + 成片复盘为核心，逐版沉淀可复用的提示词与参数。</p>
+      </div>
+      <div class="proj">
+        <div class="proj-title">校园活动宣传与公众号运营 <span class="badge">校级</span></div>
+        <p>宣传部任职期间负责校级活动的策划、组织与宣传落地：从活动方案与宣传节奏切入，产出海报与推文所需图文素材，并完成学校官方公众号的选题、编辑与发布；通过跨部门沟通拉齐信息与时间节点，保证每场活动按期完成宣传与复盘。</p>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-head"><span class="sec-mark"></span><span class="sec-cn">教育经历</span><span class="sec-en">Education</span></div>
+      <div class="edu">
+        <div class="edu-head">
+          <span class="edu-school">辽东学院</span>
+          <span class="edu-major">网络工程 · 本科</span>
+          <span class="edu-date">2025 — 2027</span>
+        </div>
+        <p>在读，系统学习计算机网络与工程相关课程；课余持续投入 AI 生成与视频剪辑实践。</p>
+      </div>
+      <div class="edu">
+        <div class="edu-head">
+          <span class="edu-school">大连枫叶职业技术学院</span>
+          <span class="edu-major">数字媒体艺术 · 大专</span>
+          <span class="edu-date">2022 — 2025</span>
+        </div>
+        <p>主修数字媒体艺术相关课程，学习设计基础、影像与后期制作；任学习委员并兼任多门专业课课代表，获校级一等奖学金、国家励志奖学金。</p>
+      </div>
+    </section>
+
+    <div class="main-foot">
+      <span>PORTFOLIO · <b>helix-byte.github.io/WYC-AIGC-Portfolio</b></span>
+      <span>RESUME · 2026.11</span>
+    </div>
+  </main>
+</div>
+</body>
+</html>
