@@ -168,10 +168,9 @@ JS
 ## 7. 当前已知状态（需持续更新）
 
 - 视频已全部改为多吉云永久直链（清单见 `assets/videos/m3u8_permalinks.json`），仓库内不再保留 MP4；原 Python 取链脚本（`scripts/fetch_m3u8.py`）因只能取到临时地址已废弃删除。
-
 - 站点已上线，线上地址返回 200；核对线上状态直接用 `curl -I` 访问页面与资源，勿依赖 GitHub Pages API（匿名请求可能返回 404，不能作为未启用判据）。
 - `assets/og-cover.png` 约 710KB，社交平台抓取偏慢，可压缩至 200KB 以内。
-- `feature/portfolio-page` 分支为**用户指定长期保留**，与 `.agents/AGENT.md` 中「合并后删除特性分支」的默认规则冲突时，以保留为准。
+- 历史分支 `feature/portfolio-page` 已完全合入 `main` 并从远端删除，当前远端仅保留 `main`，无长期保留分支。
 
 ## 8. 不要做的事
 
