@@ -9,7 +9,7 @@
 | 项目 | 值 |
 | --- | --- |
 | 仓库 | `helix-byte/WYC-AIGC-Portfolio` |
-| 线上地址 | https://helix-byte.github.io/WYC-AIGC-Portfolio/ |
+| 线上地址 | https://helix.ln.cn/ |
 | 主分支 | `main` |
 | 部署 | GitHub Pages（`main` 分支 `/ (root)`），已上线可访问 |
 | 使用场景 | 投递简历时附带链接；HR 打开即看，无需登录、无需联网 |
