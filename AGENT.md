@@ -18,6 +18,7 @@
 - **原生三件套**：`index.html` + `css/style.css` + `js/main.js`；`main.js` 是 IIFE，沿用 ES5（`var` + 函数声明）风格。
 - **资源本地优先**：字体、图片、剧本等一律仓库内文件，禁止外链。
 - **唯一外链**：视频走**多吉云官方播放器 SDK（DogePlayer）**，`index.html` 引入 `https://player.dogecloud.com/js/loader`（官方明确不支持 NPM 安装或本地部署）。`main.js` 只保存 `vcode`，播放地址由 SDK 每次播放时向多吉云实时获取并自动续期 —— **仓库与页面中不存在任何 M3U8 链接**。故**视频播放需联网**，其余区块可离线。
+- **MP4 仅作归档**：`assets/videos/` 保留 11 个 MP4 源文件（约 145MB）供本地备份与二次剪辑，**页面与代码均不引用**，属主动保留，不得以「精简仓库」为由删除。
 - **双击可用**：`file://` 下须正常渲染（视频受跨域限制，建议本地静态服务器预览），改完按此场景自测。
 
 ## 3. 目录
@@ -29,6 +30,7 @@
 ├── js/main.js          # 交互逻辑 + 作品数据 WORKS
 ├── assets/
 │   ├── posters/        # 视频封面 webp，与视频同名，兼作首页胶片条
+│   ├── videos/         # 11 个 MP4 源文件，仅本地归档，页面不引用（约 145MB）
 │   ├── scripts/        # 分镜剧本 docx
 │   ├── images/ai|design/  # AI 概念图 / 视觉设计作品（webp）
 │   ├── 王艺纯-简历.pdf   # 由 resume.html 导出
@@ -124,14 +126,15 @@ JS
 | --- | --- |
 | 语言 | 全程简体中文（代码、路径、报错原文除外） |
 | 写入 / 校验 | 只改文件用 `edit`/`write`；校验脚本走 stdin（`node - <<'JS'`），不落地临时文件 |
-| 单文件体积 | ≤ 100MB（GitHub 限制），当前最大约 710KB（`og-cover.png`） |
+| 单文件体积 | ≤ 100MB（GitHub 限制），当前最大约 33MB（`assets/videos/文艺复兴《暴风雨》.mp4`） |
 | 图片 | WebP，单图尽量 < 500KB |
 | 外链 | 仅多吉云 DogePlayer SDK（`https://player.dogecloud.com/js/loader`）；页不得出现 m3u8 地址 |
 | 兼容性 | 现代浏览器 + `file://` 双击打开 |
 
 ## 7. 已知状态
 
-- 视频改为**DogePlayer + `vcode`** 播放：11 条视频各存一个 VCode，播放地址由 SDK 动态获取。仓库内无 MP4、无 M3U8 直链（旧的 `assets/videos/m3u8_permalinks.json` 永久直链清单已删除，对应视频也已重建使旧链接失效）；
+- 视频改为**DogePlayer + `vcode`** 播放：11 条视频各存一个 VCode，播放地址由 SDK 动态获取。页面与代码中无 M3U8 直链、无 `permalink` 域名（旧 `assets/videos/m3u8_permalinks.json` 永久直链清单已删除，对应视频已重建使旧链接失效）；
+- `assets/videos/` 保留 11 个 MP4 源文件（约 145MB）作本地归档，仅备份用途，页面不引用。GitHub Pages 会随仓库发布这些文件，任何页面均不得链出（否则直接消耗站点带宽）；
 - 站点已上线，核对线上用 `curl -I` 访问页面与资源；勿用 GitHub Pages API 作判据（匿名请求可能 404）。
 - `assets/og-cover.png` 约 710KB，可压缩至 200KB 以内。
 - 远端仅 `main` 一个分支，无长期保留分支。
@@ -140,6 +143,7 @@ JS
 
 1. 不要引入构建工具、框架、包管理器或第三方依赖。
 2. 不要重排 `WORKS` 顺序 —— 数组顺序即展示顺序，`code` 编号须对应。
-3. 不要为「精简仓库」删 `assets/` 下在用素材 —— 素材与 `WORKS` 强引用。
+3. 不要为「精简仓库」删 `assets/` 下素材 —— 在用素材与 `WORKS` 强引用，`assets/videos/` 归档件为主动保留。
 4. 不要直接向 `main` 提交，不要用 fast-forward 合并；流程见 [`.agents/AGENT.md`](.agents/AGENT.md)。
 5. 不要在未重新导出 PDF 的情况下改 `resume.html`。
+6. 不要把 `assets/videos/` 下的 MP4 接入页面 —— 播放统一走 DogePlayer + `vcode`。
